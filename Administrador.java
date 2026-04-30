@@ -9,5 +9,9 @@ package model;
  * @author UNICORDOBA
  */
 public class Administrador {
-    
+
+  public Administrador(String usuario, String clave) {
+        super(usuario, clave, "admin");
+    }
 }
+
