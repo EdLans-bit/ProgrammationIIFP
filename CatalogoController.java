@@ -13,7 +13,8 @@ import model.Producto;
 public class CatalogoController {
     
     private ListaProductos lista = new ListaProductos();
-
+    
+    //Método para agregar productos
     public void agregarProducto(String nombre, double precio, int stock,
                                 String especificacion, String imagen) {
 
@@ -40,5 +41,57 @@ public class CatalogoController {
         }
         
     }
+    
+    //Método para buscar producto
+    public Producto buscarProducto (String nombre){
+        
+        NodoProducto aux = lista.getInicio();
+        
+        while (aux != null){
+            if (aux.dato.getNombre().equalsIgnoreCase(nombre)){
+                return aux.dato;
+            } 
+            aux = aux.siguiente;
+        }
+        
+        return null;
+    }
+    
+    //Método para eliminar primer producto encontrado
+    public boolean eliminarProducto(String nombre){
+          NodoProducto aux = lista.getInicio();
+          NodoProducto anterior = null;
 
-}
+        while (aux != null) {
+
+            if (aux.dato.getNombre().equalsIgnoreCase(nombre)) {
+
+                if (anterior == null) {
+                    lista.setInicio(aux.siguiente);
+                } else {
+                    anterior.siguiente = aux.siguiente;
+                }
+
+                return true;
+            }
+
+            anterior = aux;
+            aux = aux.siguiente;
+        }
+
+        return false;
+    }
+
+    //Método para actualizar stock
+    public boolean actualizarStock(String nombre, int nuevoStock) {
+
+        Producto p = buscarProducto(nombre);
+
+        if (p != null) {
+            p.setStock(nuevoStock);
+            return true;
+        }
+
+        return false;
+    }
+    }
