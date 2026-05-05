@@ -1,0 +1,71 @@
+.mainFxmlClass {
+    -fx-background-color: #FFFFFF;
+}
+
+.panel-izquierdo {
+    -fx-background-color: linear-gradient(to bottom right, #1a4bba, #3b82f6);
+}
+
+.titulo-principal {
+    -fx-font-size: 32px;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1a1a;
+}
+
+.subtitulo {
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: #666666;
+}
+
+.campo-texto {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-padding: 10px 15px 10px 40px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #9CA3AF;
+}
+
+.campo-texto:focused {
+    -fx-border-color: #0078D7;
+    -fx-border-width: 2px;
+}
+
+.boton-principal {
+    -fx-background-color: #0066FF;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25px;
+    -fx-padding: 12px 20px;
+    -fx-cursor: hand;
+}
+
+.boton-principal:hover {
+    -fx-background-color: #0052cc;
+}
+
+.check-box {
+    -fx-font-size: 12px;
+    -fx-text-fill: #4b5563;
+}
+
+.hyperlink {
+    -fx-font-size: 12px;
+    -fx-text-fill: #0066FF;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+}
+
+.hyperlink:hover {
+    -fx-underline: true;
+}
+
+.texto-normal {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666666;
+}
