@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VistaRegistroController">
+    <stylesheets>
+        <URL value="@/vistas/vistalogin.css" />
+    </stylesheets>
+    <children>
+        <AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="panel-izquierdo" stylesheets="@vistalogin.css">
+           <children>
+              <ImageView fitHeight="500.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="false" />
+           </children>
+        </AnchorPane>
+        
+        <AnchorPane layoutX="400.0" prefHeight="500.0" prefWidth="400.0">
+            <children>
+                <Label layoutX="40.0" layoutY="40.0" styleClass="titulo-principal" text="Regístrate" />
+                <Label layoutX="40.0" layoutY="85.0" styleClass="subtitulo" text="Crea una cuenta para continuar" />
+                
+                <TextField layoutX="40.0" layoutY="130.0" prefHeight="45.0" prefWidth="320.0" promptText="Nombre completo" styleClass="campo-texto" />
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="55.0" layoutY="143.0" opacity="0.4" pickOnBounds="true" preserveRatio="true" />
+                
+                <TextField layoutX="40.0" layoutY="200.0" prefHeight="45.0" prefWidth="320.0" promptText="Correo electrónico" styleClass="campo-texto" />
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="55.0" layoutY="213.0" opacity="0.4" pickOnBounds="true" preserveRatio="true" />
+                
+                <PasswordField layoutX="40.0" layoutY="270.0" prefHeight="45.0" prefWidth="320.0" promptText="Contraseña" styleClass="campo-texto" />
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="55.0" layoutY="283.0" opacity="0.4" pickOnBounds="true" preserveRatio="true" />
+                
+                <CheckBox layoutX="50.0" layoutY="330.0" mnemonicParsing="false" styleClass="check-box" text="Acepto los términos y condiciones" />
+                
+                <Button layoutX="40.0" layoutY="370.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="320.0" styleClass="boton-principal" text="Crear Cuenta" />
+                
+                <VBox alignment="CENTER" layoutX="40.0" layoutY="430.0" prefWidth="320.0" spacing="5.0">
+                   <children>
+                      <HBox alignment="CENTER" spacing="5.0">
+                         <children>
+                            <Label styleClass="texto-normal" text="¿Ya tienes cuenta?" />
+                            <Hyperlink fx:id="linkVolver" onAction="#volverAlLogin" styleClass="hyperlink" text="Inicia sesión aquí" />
+                         </children>
+                      </HBox>
+                   </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
