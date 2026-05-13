@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #f4f7fa;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VistaDetalleController">
+   
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="80.0" spacing="20.0" style="-fx-background-color: #001a57; -fx-padding: 0 40 0 40;">
+         <children>
+            <Label style="-fx-font-weight: bold; -fx-text-fill: white;" text="QUANTIX">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label style="-fx-text-fill: white;" text="SHOP">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="-15.0" />
+               </HBox.margin>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField prefHeight="35.0" prefWidth="400.0" promptText="Buscar producto..." style="-fx-background-radius: 5;" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="❤️" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 20;" text="🛒" />
+         </children>
+      </HBox>
+   </top>
+
+   <center>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox maxHeight="500.0" maxWidth="950.0" spacing="40.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 40; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 20, 0, 0, 10);">
+               <children>
+                  
+                  <VBox alignment="CENTER" prefWidth="450.0">
+                     <children>
+                        <ImageView fx:id="imgProducto" fitHeight="350.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+
+                  <VBox spacing="15.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label fx:id="lblNombre" style="-fx-font-weight: bold; -fx-text-fill: #1e293b;" text="Nombre del Producto">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label style="-fx-text-fill: #ef4444;" text="❤️">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+
+                        <Label fx:id="lblPrecio" style="-fx-text-fill: #ef4444; -fx-font-weight: bold;" text="\$0.00 usd">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+
+                        <Label fx:id="lblStock" style="-fx-text-fill: #64748b;" text="Stock Disponible: 0 unidades" />
+
+                        <VBox spacing="5.0">
+                           <children>
+                              <Label text="Cantidad:" />
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Button onAction="#disminuirCantidad" style="-fx-background-color: #e2e8f0;" text="-" />
+                                    <TextField fx:id="txtCantidad" alignment="CENTER" prefWidth="50.0" text="1" />
+                                    <Button onAction="#aumentarCantidad" style="-fx-background-color: #e2e8f0;" text="+" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+
+                        <VBox spacing="5.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold;" text="Especificaciones:" />
+                              <Label fx:id="lblEspecificaciones" alignment="TOP_LEFT" prefHeight="120.0" prefWidth="400.0" style="-fx-text-fill: #334155;" text="Cargando especificaciones..." wrapText="true">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+
+                        <Button maxWidth="Infinity" prefHeight="50.0" style="-fx-background-color: #003399; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Comprar">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        
+                        <Button onAction="#volverAlCatalogo" style="-fx-background-color: transparent; -fx-text-fill: #003399; -fx-underline: true; -fx-cursor: hand;" text="Volver al catálogo" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
