@@ -5,90 +5,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.RowConstraints?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VistaCatalogoController">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VistaCatalogoController">
    <children>
-      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="900.0" spacing="30.0" styleClass="header-shop" stylesheets="@vistalogin.css">
+      <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="900.0" spacing="20.0" style="-fx-background-color: #003399;" styleClass="header-shop" stylesheets="@vistalogin.css">
          <children>
             <Label style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;" text="QUANTIX SHOP" />
-            <TextField prefHeight="35.0" prefWidth="400.0" promptText="🔍 Buscar producto..." styleClass="search-bar" />
-            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="246.0" spacing="20.0">
-               <children>
-                  <Label text="❤️" style="-fx-font-size: 20; -fx-text-fill: white;" />
-                  <Label text="🛒" style="-fx-font-size: 20; -fx-text-fill: white;" />
-               </children>
-            </HBox>
+            <TextField prefHeight="35.0" prefWidth="350.0" promptText="🔍 Buscar producto..." style="-fx-background-radius: 20;" styleClass="search-bar" />
+            
+            <Region HBox.hgrow="ALWAYS" />
+            
+            <Button fx:id="btnSesion" mnemonicParsing="false" onAction="#manejarAccionSesion" style="-fx-background-color: #DC2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15; -fx-cursor: hand; -fx-background-radius: 5;" text="Cerrar Sesión" />
          </children>
          <padding>
             <Insets left="30.0" right="30.0" />
          </padding>
       </HBox>
 
-      <ScrollPane fitToWidth="true" prefHeight="530.0" prefWidth="900.0">
+      <ScrollPane fitToWidth="true" prefHeight="525.0" prefWidth="900.0" style="-fx-background-color: transparent;">
          <content>
-            <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: #F9FAFB; -fx-padding: 30;">
+            <VBox alignment="TOP_CENTER" spacing="25.0" style="-fx-background-color: #F9FAFB; -fx-padding: 40;">
                <children>
-                  <Label style="-fx-font-size: 28; -fx-font-weight: bold;" text="Catálogo de Productos" />
+                  <Label style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #111827;" text="Explora nuestro catálogo" />
                   
-                  <GridPane hgap="20.0" vgap="20.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <children>
-                        
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="product-card" stylesheets="@vistalogin.css" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                           <children>
-                              <Label style="-fx-font-weight: bold;" text="MacBook Neo 256 GB" />
-                              <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
-                              <HBox alignment="CENTER" spacing="10.0">
-                                 <children>
-                                    <Label styleClass="price-text" text="\$999 usd" />
-                                    <Button mnemonicParsing="false" styleClass="buy-button" text="Comprar" />
-                                 </children>
-                                 <padding><Insets top="10.0" /></padding>
-                              </HBox>
-                           </children>
-                        </VBox>
-
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="product-card" stylesheets="@vistalogin.css" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                           <children>
-                              <Label style="-fx-font-weight: bold;" text="MacBook Air M4" />
-                              <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
-                              <HBox alignment="CENTER" spacing="10.0">
-                                 <children>
-                                    <Label styleClass="price-text" text="\$1.299 usd" />
-                                    <Button mnemonicParsing="false" styleClass="buy-button" text="Comprar" />
-                                 </children>
-                                 <padding><Insets top="10.0" /></padding>
-                              </HBox>
-                           </children>
-                        </VBox>
-
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="product-card" stylesheets="@vistalogin.css" GridPane.columnIndex="2" GridPane.rowIndex="0">
-                           <children>
-                              <Label style="-fx-font-weight: bold;" text="iPhone 15 Pro" />
-                              <ImageView fitHeight="120.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
-                              <HBox alignment="CENTER" spacing="10.0">
-                                 <children>
-                                    <Label styleClass="price-text" text="\$1.099 usd" />
-                                    <Button mnemonicParsing="false" styleClass="buy-button" text="Comprar" />
-                                 </children>
-                                 <padding><Insets top="10.0" /></padding>
-                              </HBox>
-                           </children>
-                        </VBox>
-
-                    </children>
-                  </GridPane>
+                  <FlowPane fx:id="contenedorProductos" alignment="CENTER" hgap="25.0" prefWrapLength="800.0" vgap="25.0" />
                </children>
             </VBox>
          </content>
