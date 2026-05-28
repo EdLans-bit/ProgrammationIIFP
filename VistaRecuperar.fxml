@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="mainFxmlClass" stylesheets="@vistalogin.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VistaRecuperarController">
+    <children>
+        <AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="panel-izquierdo">
+           <children>
+              <ImageView fitHeight="500.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="false">
+                 <image>
+                    <Image url="@/imagenes/login.jpeg" />
+                 </image>
+              </ImageView>
+           </children>
+        </AnchorPane>
+        
+        <AnchorPane layoutX="400.0" prefHeight="500.0" prefWidth="400.0">
+            <children>
+                <Label layoutX="40.0" layoutY="80.0" styleClass="titulo-principal" text="¿Olvidaste tu clave?" />
+                <Label layoutX="40.0" layoutY="130.0" prefWidth="320.0" styleClass="subtitulo" text="Ingresa tu correo para enviarte un enlace de recuperación." wrapText="true" />
+                
+                <TextField layoutX="40.0" layoutY="210.0" prefHeight="45.0" prefWidth="320.0" promptText="Correo electrónico" styleClass="campo-texto" />
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="55.0" layoutY="223.0" opacity="0.4" pickOnBounds="true" preserveRatio="true" />
+                
+                <Button layoutX="40.0" layoutY="290.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="320.0" styleClass="boton-principal" text="Enviar Instrucciones" />
+                
+                <VBox alignment="CENTER" layoutX="40.0" layoutY="380.0" prefWidth="320.0">
+                   <children>
+                      <Hyperlink onAction="#volverAlLogin" styleClass="hyperlink" text="Volver al inicio de sesión" />
+                   </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
